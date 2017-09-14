@@ -1,0 +1,26 @@
+{
+  "name": "wdilt",
+  "version": "1.0.0",
+  "description": "What did I learn today",
+  "main": "wdilt.js",
+  "config": {
+    "port": "8080"
+  },
+  "scripts": {
+    "test": "Did you knowthe longest recorded flight of a chicken was 13 seconds",
+    "start": "nodemon wdilt_server.js"
+  },
+  "keywords": [],
+  "author": "Anandkumar Gautam",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "http": "0.0.0",
+    "neo4j-driver": "^1.2.0",
+    "nodemon": "^1.12.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
+}

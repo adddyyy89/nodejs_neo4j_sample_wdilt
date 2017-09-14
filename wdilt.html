@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="wdiltApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>WDILT</title>
+	<link rel="stylesheet" href="">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+
+</head>
+<body ng-controller="wdiltRESTApp">
+
+	<!-- TITLE -->
+	<div name="title_row" class="row" style="margin-bottom: 27px;" >
+		<div name="title" class="col-sm-12">
+			<center><h1>W-D-I-L-T</h1></center>
+		</div>
+	</div>
+
+	<!-- MAIN -->
+	<div name="body_row" class="row" style="height: 400px; background-image: url('./resources/bkg_image.jpeg');">
+		<div name="menu" class="col-sm-3">
+			<ul>
+				<li style="margin-bottom: 27px; font-weight: "><a href="#" style="font-weight: bolder;
+    color: floralwhite;font-size: x-large;" ng-click="showHomeOnly();">Home</a></li>
+				<li style="margin-bottom: 27px;"><a href="#" ng-click="showWHWLOnly();" style="font-weight: bolder;
+    color: floralwhite;font-size: x-large;">W-H-W-L</a></li>
+				<li style="margin-bottom: 27px;"><a href="#" ng-click="showTagsOnly();" style="font-weight: bolder;
+    color: floralwhite;font-size: x-large;">Tags</a></li>
+				<li><a href="#" ng-click="showResourcesOnly();" style="font-weight: bolder;
+    color: floralwhite;font-size: x-large;">Resources</a></li>
+			</ul>
+		</div>
+		<div name="body" class="col-sm-9">
+			
+			<!-- HOME -->
+			<div name="home" class="col-sm-12" ng-show="showHome">
+				<center>
+
+					<!-- Title of our today's learning -->
+					<div class="col-sm-12" name="title_div">
+						<input type="text" style="margin-top: 3px;margin-bottom: 20px;width: 25em;text-align: center;" name="title" ng-model="title" size="10" placeholder="Title goes here">
+					</div>
+
+					<!-- Description if any ? -->
+					<div class="col-sm-12" name="description_div">
+						<textarea name="description" style="margin-bottom: 20px;width: 35em;text-align: center;" ng-model="description" rows="4" placeholder="and description here" ></textarea>
+					</div>
+
+					<!-- Tags hash seperated -->
+					<div class="col-sm-12" name="tags_div">
+						<textarea name="tags" style="margin-bottom: 20px;width: 35em;text-align: center;" ng-model="tags" rows="1" placeholder="#funny#wtf" ></textarea>
+					</div>
+
+					<!-- Resources comma seperated -->
+					<div class="col-sm-12" name="resource_div">
+						<textarea name="resources" style="margin-bottom: 20px;width: 35em;text-align: center;" ng-model="resources" rows="4" placeholder="https://www.youtube.com/watch?v=J8fFVOoqepc;https://github.com/adddyyy89;" ></textarea>
+					</div>
+
+					<!-- Submit today's learning -->
+					<div class="col-sm-12" name="submit_div">
+						<button type="submit" style="margin-bottom: 3px;width: 15em;" ng-click="submit();">Submit</button>
+					</div>
+				</center>
+			</div>
+
+			<!-- What Have We Learned -->
+			<div name="whwl" class="row" ng-show="showWHWL">
+				{{whwl}}
+			</div>
+
+			<!-- Tags -->
+			<div name="tags" class="row" ng-show="showTags">
+				{{tags}}
+			</div>
+
+			<!-- Resources -->
+			<div name="resources" class="row" ng-show="showResources">
+				{{resources}}
+			</div>
+		</div>		
+	</div>
+
+
+	<!-- FOOTER -->
+	<div name="footer_row" class="row" style="margin-top: 100px;border: 1px solid;">
+		<div name="footer" class="col-sm-12">
+			<center><p>(: Have Fun Guys! :)</p></center>
+		</div>
+	</div>
+
+	<script src="./js/wdilt.js"></script>
+</body>
+</html>
